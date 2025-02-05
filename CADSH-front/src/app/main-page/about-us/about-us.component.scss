@@ -1,0 +1,21 @@
+@media (max-width:2560px) {
+    .about-us-container{
+        background-color: #F9F8FE;
+        margin-top: 10vh;
+        display: grid;
+        gap: 10%;
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-us-text{
+        margin-left: 30px;
+    }
+    .about-us-additional-info{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        justify-content: center;
+    }
+    .about-us-mission{
+        padding-bottom: 10%;
+    }
+}
