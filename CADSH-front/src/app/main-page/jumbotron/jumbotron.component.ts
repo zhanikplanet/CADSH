@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-jumbotron',
-  imports: [],
+  imports: [ButtonModule],
   templateUrl: './jumbotron.component.html',
-  styleUrl: './jumbotron.component.scss'
+  styleUrl: './jumbotron.component.scss',
 })
-export class JumbotronComponent {
-
-}
+export class JumbotronComponent {}
