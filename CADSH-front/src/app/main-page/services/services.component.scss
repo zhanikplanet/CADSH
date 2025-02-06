@@ -1,0 +1,9 @@
+@media (max-width:2560px) {
+    .accordion-container{
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+    .accordion-header{
+        align-content: center;
+    }
+}
