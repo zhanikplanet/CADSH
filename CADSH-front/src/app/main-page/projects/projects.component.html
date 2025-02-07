@@ -1,15 +1,17 @@
-<div class="projects-container">
-    <div class="mb-4 p-8 flex items-center justify-center">
-        <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
-            <ng-template #header>
-                <img alt="Card" class="w-full" src="" />
-            </ng-template>
-            <ng-template #title> Advanced Card </ng-template>
-            <ng-template #subtitle> Card subtitle </ng-template>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-            </p>
-        </p-card>
+<div class="projects-container px-4 py-8">
+    <!-- Centered Title -->
+    <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+
+    <!-- Responsive Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
+        @for (item of items; track $index) {
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img [src]="item.imgSrc" [alt]="item.alt" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">{{ item.title }}</h3>
+                    <p class="text-gray-600">{{ item.text }}</p>
+                </div>
+            </div>
+        }
     </div>
 </div>
