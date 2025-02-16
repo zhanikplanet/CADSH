@@ -1,23 +1,25 @@
-<div class="w-full bg-gray-900 text-gray-300 py-6">
+<div id="contact-section" class="w-full bg-gray-900 text-gray-300 py-6">
     <section class="p-6">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
-            <!-- Contact Section (40%) -->
             <div class="col-span-2 max-w-lg w-full mx-auto">
                 <h4 class="text-lg font-semibold uppercase mb-4 text-center text-5xl">Contact</h4>
                 <ul class="space-y-2">
-                    <li class="contact-item"><img src="/assets/svg/location.svg" alt="location" class="contact-item-icon">
+                    <li class="contact-item"><img src="/assets/svg/location.svg" alt="location"
+                            class="contact-item-icon">
                         <p class="text-2xl mb-11">Astana, AS 10012, KZ</p>
                     </li>
                     <li class="contact-item"><img src="/assets/svg/email.svg" alt="email" class="contact-item-icon">
-                        <p class="text-2xl mb-11">zhanik.planet1&#64;gmail.com</p>
+                        <div>
+                            <p class="text-2xl mb-11">info&#64;cadsh.kz</p>
+                            <p class="text-2xl mb-11">ceo&#64;cadsh.kz</p>
+                            <p class="text-2xl mb-11">manager&#64;cadsh.kz</p>
+                        </div>
                     </li>
                     <li class="contact-item"><img src="/assets/svg/phone.svg" alt="phone" class="contact-item-icon">
                         <p class="text-2xl">+7 7472650526</p>
                     </li>
                 </ul>
             </div>
-
-            <!-- Updated Form (60%) -->
             <div class="col-span-3 max-w-lg w-full mx-auto ml-5">
                 <form [formGroup]="form" (ngSubmit)="send()"
                     class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-500">
@@ -47,17 +49,43 @@
             </div>
         </div>
     </section>
-
     <hr class="border-gray-600 my-6 mx-auto w-4/5">
-
     <section class="p-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="text-lg text-center">&copy; 2025 Copyright: Zhankozy Abdisattar</div>
-            <div class="flex space-x-4 mt-4 md:mt-0">
-                <i class="fas fa-user-tie text-2xl p-2 border rounded-full border-gray-500"></i>
-                <i class="fab fa-linkedin text-2xl p-2 border rounded-full border-gray-500"></i>
-                <i class="fab fa-instagram text-2xl p-2 border rounded-full border-gray-500"></i>
+            <div class="privacy-policy">
+                <button (click)="showDialog()">Privacy Policy</button>
+                <p-dialog header="Privacy Policy" [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
+                    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+                    <p class="mb-8">
+                        This Visitor Agreement is a binding legal agreement between you and CADSH Please read it
+                        carefully. By accessing this website (including by automated means), you accept its terms.
+                        General Provisions The web is an evolving medium. If we need to change the terms of this Visitor
+                        Agreement in the future, we will post the revised Visitor Agreement on our site and update the
+                        “Last Updated” date, above, to reflect the date of the changes. By continuing to use this
+                        website after we post such changes, you agree to the terms of this Visitor Agreement, as
+                        modified. If you have comments or questions about our site, please send them to us at
+                        info&#64;cadsh.kz. We reserve the right to deny access to this website, or any service provided via
+                        this website, to anyone who violates this agreement or who, in our judgment, interferes with the
+                        ability of others to enjoy this website, or infringes the rights of others. We may change,
+                        restrict access to, suspend, or discontinue this website, or any portion of this website, at any
+                        time. The site is provided to you on an “as is” and “as available” basis. We disclaim all
+                        responsibility for the availability, timeliness, security, or reliability of the site or any
+                        feature or software included in the site.
+                    </p>
+                </p-dialog>
             </div>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                    <i class="fab fa-facebook-f text-xl leading-none"></i>
+                </a>
+                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                    <i class="fab fa-linkedin text-xl leading-none"></i>
+                </a>
+                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                    <i class="fab fa-instagram text-xl leading-none"></i>
+                </a>
+            </div>            
         </div>
     </section>
 </div>

@@ -1,12 +1,19 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 @Component({
   selector: 'app-footer',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,DialogModule,ButtonModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit {
+  visible: boolean = false;
+
+  showDialog() {
+      this.visible = true;
+  }
 
   form!: FormGroup;
 

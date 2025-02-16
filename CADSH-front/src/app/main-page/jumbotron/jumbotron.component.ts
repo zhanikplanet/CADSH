@@ -7,4 +7,11 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './jumbotron.component.html',
   styleUrl: './jumbotron.component.scss',
 })
-export class JumbotronComponent {}
+export class JumbotronComponent {
+  scrollToContact() {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}

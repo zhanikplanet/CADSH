@@ -1,45 +1,29 @@
-<div class="accordion-container grid grid-cols-5 lg:grid-cols-6 xl:grid-cols-6">
-    <div class="accordion-header flex items-center justify-center p-6 w-full col-span-2">
-        <h2 class="text-2xl font-semibold text-center">Our Services</h2>
-    </div>
-    <div class="card flex justify-center col-span-4 p-4 ml-32">
-        <p-accordion value="0">
-            <p-accordion-panel value="0">
-                <p-accordion-header>Header I</p-accordion-header>
-                <p-accordion-content>
-                    <p class="m-0">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
-                    </p>
-                </p-accordion-content>
-            </p-accordion-panel>
-
-            <p-accordion-panel value="1">
-                <p-accordion-header>Header II</p-accordion-header>
-                <p-accordion-content>
-                    <p class="m-0">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                        enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-                        qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-                    </p>
-                </p-accordion-content>
-            </p-accordion-panel>
-
-            <p-accordion-panel value="2">
-                <p-accordion-header>Header III</p-accordion-header>
-                <p-accordion-content>
-                    <p class="m-0">
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                        corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in
-                        culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                        expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-                    </p>
-                </p-accordion-content>
-            </p-accordion-panel>
-        </p-accordion>
+<div class="accordion-container grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
+    <h2 class="text-3xl font-bold text-center mb-8 col-span-full">Services</h2>
+    <p class="text-center text-2xl">
+        <strong class="">At CADSH, we differentiate ourselves through our deep understanding of the regional digital
+            landscape and our commitment to local talent development. Our strengths include:</strong>
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        @for (item of items; track $index) {
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+            <img [src]="item.imgSrc" [alt]="item.alt" class="w-full h-48 object-cover">
+            <div class="p-6 flex-grow">
+                <h3 class="text-xl font-semibold mb-2">{{ item.title }}</h3>
+                <p class="text-gray-600 text-xl">{{ item.text }}</p>
+            </div>
+            <div class="flex justify-center p-4">
+                <button type="button"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition"
+                    (click)="showDialog()">Show</button>
+            </div>
+            <p-dialog header="Header" [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
+                [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="true">
+                <p>
+                    Lorem ipsum dolor sit amet...
+                </p>
+            </p-dialog>
+        </div>
+        }
     </div>
 </div>
