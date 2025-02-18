@@ -9,10 +9,15 @@ import { DialogModule } from 'primeng/dialog';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit {
-  visible: boolean = false;
+  privacyVisible: boolean = false;
+  termsVisible: boolean = false;
 
-  showDialog() {
-      this.visible = true;
+  showPrivacyDialog() {
+      this.privacyVisible = true;
+  }
+
+  showTermsDialog() {
+      this.termsVisible = true;
   }
 
   form!: FormGroup;

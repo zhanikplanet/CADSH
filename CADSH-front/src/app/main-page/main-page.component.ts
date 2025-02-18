@@ -3,11 +3,10 @@ import { JumbotronComponent } from "./jumbotron/jumbotron.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { ServicesComponent } from "./services/services.component";
 import { FooterComponent } from "./footer/footer.component";
-import { ProjectsComponent } from "./projects/projects.component";
 
 @Component({
   selector: 'app-main-page',
-  imports: [JumbotronComponent, AboutUsComponent, ServicesComponent, FooterComponent, ProjectsComponent],
+  imports: [JumbotronComponent, AboutUsComponent, ServicesComponent, FooterComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

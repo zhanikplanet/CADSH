@@ -2,7 +2,7 @@
     <section class="p-6">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
             <div class="col-span-2 max-w-lg w-full mx-auto">
-                <h4 class="text-lg font-semibold uppercase mb-4 text-center text-5xl">Contact</h4>
+                <h4 class="text-lg font-semibold uppercase mb-4 text-center">Contact</h4>
                 <ul class="space-y-2">
                     <li class="contact-item"><img src="/assets/svg/location.svg" alt="location"
                             class="contact-item-icon">
@@ -11,8 +11,6 @@
                     <li class="contact-item"><img src="/assets/svg/email.svg" alt="email" class="contact-item-icon">
                         <div>
                             <p class="text-2xl mb-11">info&#64;cadsh.kz</p>
-                            <p class="text-2xl mb-11">ceo&#64;cadsh.kz</p>
-                            <p class="text-2xl mb-11">manager&#64;cadsh.kz</p>
                         </div>
                     </li>
                     <li class="contact-item"><img src="/assets/svg/phone.svg" alt="phone" class="contact-item-icon">
@@ -52,11 +50,11 @@
     <hr class="border-gray-600 my-6 mx-auto w-4/5">
     <section class="p-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="text-lg text-center">&copy; 2025 Copyright: Zhankozy Abdisattar</div>
+            <div class="text-lg text-center">&copy; 2025 Copyright: Central Asian Digital Solution Hab</div>
             <div class="privacy-policy">
-                <button (click)="showDialog()">Privacy Policy</button>
-                <p-dialog header="Privacy Policy" [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
-                    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+                <button (click)="showPrivacyDialog()">Privacy Policy</button>
+                <p-dialog header="Privacy Policy" [modal]="true" [(visible)]="privacyVisible"
+                    [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
                     <p class="mb-8">
                         This Visitor Agreement is a binding legal agreement between you and CADSH Please read it
                         carefully. By accessing this website (including by automated means), you accept its terms.
@@ -65,7 +63,8 @@
                         “Last Updated” date, above, to reflect the date of the changes. By continuing to use this
                         website after we post such changes, you agree to the terms of this Visitor Agreement, as
                         modified. If you have comments or questions about our site, please send them to us at
-                        info&#64;cadsh.kz. We reserve the right to deny access to this website, or any service provided via
+                        info&#64;cadsh.kz. We reserve the right to deny access to this website, or any service provided
+                        via
                         this website, to anyone who violates this agreement or who, in our judgment, interferes with the
                         ability of others to enjoy this website, or infringes the rights of others. We may change,
                         restrict access to, suspend, or discontinue this website, or any portion of this website, at any
@@ -75,17 +74,127 @@
                     </p>
                 </p-dialog>
             </div>
+            <div class="terms-and-conditions">
+                <button (click)="showTermsDialog()">Terms and Conditions</button>
+                <p-dialog header="Terms and Conditions" [modal]="true" [(visible)]="termsVisible"
+                    [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+                    <ul class="mb-8 ">
+                        <li>
+                            <h5><strong>Introduction</strong></h5>
+                            <p>Welcome to Central Asian Digital Solutions Hub (CADSH). By accessing or using our website
+                                and services, you agree to comply with these Terms and Conditions. If you do not agree
+                                with any part of these terms, please refrain from using our website.</p>
+                        </li>
+                        <li>
+                            <h5><strong>Definitions</strong></h5>
+                            <ul>
+                                <li>“Company”, “we”, “our”, or “us” refers to Central Asian Digital Solutions Hub.</li>
+                                <li>“User”, “you”, or “your” refers to any individual or entity using our website or
+                                    services.</li>
+                                <li>“Services” refers to IT consulting, software development, SaaS platforms, training,
+                                    and procurement solutions provided by CADSH.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Use of the Website</strong></h5>
+                            <ul>
+                                <li>You must be at least 18 years old to use our services.</li>
+                                <li>You agree to use the website only for lawful purposes and in compliance with all
+                                    applicable laws and regulations.</li>
+                                <li>Unauthorized access, data scraping, or attempting to disrupt our website's
+                                    functionality is strictly prohibited.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Intellectual Property</strong></h5>
+                            <ul>
+                                <li>All content, including text, graphics, logos, software, and trademarks on this
+                                    website, is the exclusive property of CADSH and protected under intellectual
+                                    property laws.</li>
+                                <li>You may not copy, distribute, or modify any part of our content without prior
+                                    written consent.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Services and Payment</strong></h5>
+                            <ul>
+                                <li>We offer IT solutions, consulting, SaaS platforms, and other services as described
+                                    on our website.</li>
+                                <li>Pricing, fees, and payment terms are outlined in separate agreements for specific
+                                    services.</li>
+                                <li>CADSH reserves the right to modify service offerings and pricing at any time.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Limitation of Liability</strong></h5>
+                            <ul>
+                                <li>We strive to provide accurate and reliable information but do not guarantee that our
+                                    services will be error-free or uninterrupted.</li>
+                                <li>CADSH is not liable for any indirect, incidental, or consequential damages arising
+                                    from your use of our website or services.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Privacy and Data Protection</strong></h5>
+                            <ul>
+                                <li>Our Privacy Policy governs how we collect, use, and protect your personal data. By
+                                    using our website, you consent to our data practices.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Third-Party Links</strong></h5>
+                            <ul>
+                                <li>Our website may contain links to third-party websites. CADSH is not responsible for
+                                    the content, security, or privacy practices of external sites.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Termination</strong></h5>
+                            <ul>
+                                <li>We reserve the right to suspend or terminate access to our website or services if a
+                                    user violates these Terms and Conditions.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Changes to Terms and Conditions</strong></h5>
+                            <ul>
+                                <li>We may update these terms from time to time. Any changes will be posted on this
+                                    page, and continued use of our website implies acceptance of the updated terms.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Governing Law</strong></h5>
+                            <ul>
+                                <li>These Terms and Conditions are governed by the laws of Kazakhstan. Any disputes
+                                    arising from these terms will be subject to the jurisdiction of Kazakhstani courts.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5><strong>Contact Us</strong></h5>
+                            <p>For any questions regarding these Terms and Conditions, please contact us at:</p>
+                            <ul>
+                                <li>Email: info&#64;cadsh.kz</li>
+                                <li>Address: Astana</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p-dialog>
+            </div>
             <div class="flex space-x-4 mt-4 md:mt-0">
-                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                <a href="#"
+                    class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
                     <i class="fab fa-facebook-f text-xl leading-none"></i>
                 </a>
-                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                <a href="#"
+                    class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
                     <i class="fab fa-linkedin text-xl leading-none"></i>
                 </a>
-                <a href="#" class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
+                <a href="#"
+                    class="w-12 h-12 flex items-center justify-center border rounded-full border-gray-500 text-gray-300 hover:bg-gray-700 transition">
                     <i class="fab fa-instagram text-xl leading-none"></i>
                 </a>
-            </div>            
+            </div>
         </div>
     </section>
 </div>
