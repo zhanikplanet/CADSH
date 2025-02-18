@@ -10,6 +10,7 @@ import { DialogModule } from 'primeng/dialog';
 })
 export class ServicesComponent {
   visible: boolean = false;
+  selectedItem: any = null;
 
   items = [
     {
@@ -42,8 +43,10 @@ export class ServicesComponent {
       title: 'Future-Proof Strategies',
       text: 'Future-Proof Strategies: We align businesses with global tech trends, ensuring long-term sustainability and competitive advantage.'
     }
-  ]
-  showDialog() {
+  ];
+
+  showDialog(item: any) {
+    this.selectedItem = item; 
     this.visible = true;
   }
 }
