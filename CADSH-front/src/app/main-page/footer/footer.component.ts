@@ -1,43 +1,52 @@
-import { Component,OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { EmailService } from '../../email.service';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-footer',
-  imports: [ReactiveFormsModule,DialogModule,ButtonModule],
+  standalone: true,
+  imports: [ReactiveFormsModule, DialogModule, ButtonModule, CommonModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   privacyVisible: boolean = false;
   termsVisible: boolean = false;
+  form!: FormGroup;
+
+  constructor(private fb: FormBuilder, private emailService: EmailService) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
+  }
 
   showPrivacyDialog() {
-      this.privacyVisible = true;
+    this.privacyVisible = true;
   }
 
   showTermsDialog() {
-      this.termsVisible = true;
+    this.termsVisible = true;
   }
 
-  form!: FormGroup;
-
-  ngOnInit(): void {
-    this.buildForm();
-  }
-
-  constructor(private formBuilder: FormBuilder) {}
-
-  send(): void {
-    const { name, email, message } = this.form.value;
-    alert(`Name: ${name}, Email: ${email}, Message: ${message} `);
-  }
-
-  private buildForm(): void {
-    this.form = this.formBuilder.group({
-      name: this.formBuilder.control(null),
-      email: this.formBuilder.control(null),
-      message: this.formBuilder.control(null),
-    });
+  send() {
+    if (this.form.valid) {
+      this.emailService.sendEmail(this.form.value).subscribe({
+        next: (response: any) => {
+          alert('Email sent successfully!');
+          this.form.reset();
+        },
+        error: (err: any) => {
+          console.error(err);
+          alert('Failed to send email. Please try again later.');
+        }
+      });
+    } else {
+      alert('Please fill out all fields correctly.');
+    }
   }
 }
