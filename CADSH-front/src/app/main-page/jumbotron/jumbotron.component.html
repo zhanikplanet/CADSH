@@ -1,29 +1,54 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-0 bg-gray-100 text-gray-800">
-  
+  <div class="p-4 text-center md:hidden">
+    <div class="flex justify-center space-x-2">
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('kz')">
+        🇰🇿 KZ
+      </button>
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('ru')">
+        🇷🇺 RU
+      </button>
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('en')">
+        🇬🇧 EN
+      </button>
+    </div>
+  </div>
+
   <div class="p-6 text-center md:text-left flex items-center">
     <section class="w-full">
-      <span class="block text-3xl md:text-6xl font-bold mb-1">Central Asian Digital Solution Hub</span>
+      <span class="block text-3xl md:text-6xl font-bold mb-1">
+        {{ 'HERO.TITLE' | translate }}
+      </span>
       <div class="text-4xl md:text-6xl text-blue-500 font-bold mb-3">
-        Digital Excellence, Local Expertise, Global Vision
+        {{ 'HERO.SUBTITLE' | translate }}
       </div>
       <p class="mt-0 mb-4 text-gray-700 leading-relaxed text-xl md:text-2xl">
-        Empowering Businesses Through Digital Innovation in Central Asia
+        {{ 'HERO.DESCRIPTION' | translate }}
       </p>
-
       <button type="button"
-        class="mr-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition" 
+        class="mr-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition"
         (click)="scrollToContact()">
-        Contact us
+        {{ 'HERO.CONTACT_BUTTON' | translate }}
       </button>
     </section>
   </div>
 
- 
-  <div class="overflow-hidden hidden md:block">
+  <div class="relative hidden md:block">
     <picture>
       <source srcset="assets/img/tablet-hero.jpg" media="(max-width: 1024px)" />
-      <img src="assets/img/hero-2.png" alt="Image" class="md:ml-auto block md:h-full w-full object-cover"
-        style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)" />
+      <img src="assets/img/hero-2.png" alt="Image"
+        class="md:ml-auto block md:h-full w-full object-cover clip-path-hero" />
     </picture>
+
+    <div class="absolute top-4 right-4 hidden md:flex space-x-2">
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('kz')">
+        KZ
+      </button>
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('ru')">
+        RU
+      </button>
+      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md" (click)="changeLanguage('en')">
+        EN
+      </button>
+    </div>
   </div>
 </div>

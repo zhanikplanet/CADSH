@@ -1,55 +1,41 @@
 <div class="about-us-container w-full grid grid-cols-1 gap-10 mt-[10vh] md:gap-20">
     <div class="about-us-text flex flex-col items-center md:items-start text-center md:text-left px-8 md:px-20">
         <div class="w-[100px] h-[100px] aspect-square mb-4">
-            <img src="/assets/svg/about-us.svg" alt="About Us" class="w-full h-full object-contain">
+            <img src="/assets/svg/about-us.svg" alt="{{ 'ABOUT_US.TITLE' | translate }}" class="w-full h-full object-contain">
         </div>
         <div>
-            <h2 class="text-3xl font-semibold">About us</h2>
+            <h2 class="text-3xl font-semibold">{{ 'ABOUT_US.TITLE' | translate }}</h2>
             <p class="mt-4 text-2xl">
-                Central Asian Digital Solutions Hub (CADSH) is a leading consulting and technology firm dedicated to
-                unlocking Kazakhstan's immense potential for regional growth in the IT industry. As a bridge between
-                innovation and market needs, we focus on empowering businesses through digital transformation, fostering
-                cutting-edge research and development (R&D), and leveraging the country’s robust human capital.
-                Our mission is to provide tailored IT solutions that cater to the evolving demands of fintech, edtech,
-                software as a service (SaaS), and localized digital solutions. By harnessing Kazakhstan's growing tech
-                ecosystem, we strive to establish the region as a competitive player in the global digital economy.
+                {{ 'ABOUT_US.DESCRIPTION' | translate }}
             </p>
         </div>
     </div>
-    
     <div class="about-us-additional-info grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-20">
+        
         <div class="about-us-mission flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-[100px] h-[100px] aspect-square mb-4">
-                <img src="/assets/svg/mission1.svg" alt="Mission" class="w-full h-full object-contain">
+                <img src="/assets/svg/mission1.svg" alt="{{ 'ABOUT_US.MISSION.TITLE' | translate }}" class="w-full h-full object-contain">
             </div>
             <div>
-                <h3 class="text-3xl font-semibold">Mission</h3>
+                <h3 class="text-3xl font-semibold">{{ 'ABOUT_US.MISSION.TITLE' | translate }}</h3>
                 <p class="mt-4 text-2xl">
-                    Our mission is to empower businesses and institutions with forward-thinking digital solutions that:
+                    {{ 'ABOUT_US.MISSION.DESCRIPTION' | translate }}
                 </p>
                 <ul class="list-disc pl-5 space-y-2 text-xl">
-                    <li><strong>Leverage Local Expertise:</strong> We develop world-class IT solutions by nurturing and utilizing Kazakhstan's skilled workforce.</li>
-                    <li><strong>Drive Digital Transformation:</strong> Helping businesses adopt digital technologies to improve efficiency and competitiveness.</li>
-                    <li><strong>Ensure Cybersecurity:</strong> Providing state-of-the-art security solutions to safeguard digital assets and protect against cyber threats.</li>
-                    <li><strong>Encourage Innovation & R&D:</strong> Investing in localized research and development to tailor IT solutions to regional needs.</li>
-                    <li><strong>Support Sustainable Growth:</strong> Building scalable, future-proof digital solutions aligned with global technology trends.</li>
+                    <li *ngFor="let point of missionPoints">
+                        {{ point }}
+                    </li>
                 </ul>
             </div>
         </div>
-        
         <div class="about-us-vision flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-[100px] h-[100px] aspect-square mb-4">
-                <img src="/assets/svg/vision.svg" alt="Vision" class="w-full h-full object-contain">
+                <img src="/assets/svg/vision.svg" alt="{{ 'ABOUT_US.VISION.TITLE' | translate }}" class="w-full h-full object-contain">
             </div>
             <div>
-                <h3 class="text-3xl font-semibold">Vision</h3>
+                <h3 class="text-3xl font-semibold">{{ 'ABOUT_US.VISION.TITLE' | translate }}</h3>
                 <p class="mt-4 text-2xl">
-                    At CADSH, we envision a digitally empowered Central Asia that thrives on innovation, collaboration,
-                    and technological advancement. Our goal is to position Kazakhstan as a regional leader in IT,
-                    fostering a dynamic digital economy that integrates cutting-edge technologies and human capital to
-                    create a sustainable future. We aspire to bridge the digital divide, providing businesses and
-                    institutions with transformative solutions that drive efficiency, growth, and competitiveness on a
-                    global scale.
+                    {{ 'ABOUT_US.VISION.DESCRIPTION' | translate }}
                 </p>
             </div>
         </div>

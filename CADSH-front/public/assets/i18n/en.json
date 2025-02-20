@@ -1,0 +1,75 @@
+{
+    "HERO": {
+        "TITLE": "Central Asian Digital Solution Hub",
+        "SUBTITLE": "Digital Excellence, Local Expertise, Global Vision",
+        "DESCRIPTION": "Empowering Businesses Through Digital Innovation in Central Asia",
+        "CONTACT_BUTTON": "Contact us"
+    },
+    "ABOUT_US": {
+        "TITLE": "About us",
+        "DESCRIPTION": "Central Asian Digital Solutions Hub (CADSH) is a leading consulting and technology firm dedicated to unlocking Kazakhstan's immense potential for regional growth in the IT industry. As a bridge between innovation and market needs, we focus on empowering businesses through digital transformation, fostering cutting-edge research and development (R&D), and leveraging the country’s robust human capital. Our mission is to provide tailored IT solutions that cater to the evolving demands of fintech, edtech, software as a service (SaaS), and localized digital solutions. By harnessing Kazakhstan's growing tech ecosystem, we strive to establish the region as a competitive player in the global digital economy.",
+        "MISSION": {
+            "TITLE": "Mission",
+            "DESCRIPTION": "Our mission is to empower businesses and institutions with forward-thinking digital solutions that:",
+            "POINTS": [
+                "Leverage Local Expertise: We develop world-class IT solutions by nurturing and utilizing Kazakhstan's skilled workforce.",
+                "Drive Digital Transformation: Helping businesses adopt digital technologies to improve efficiency and competitiveness.",
+                "Ensure Cybersecurity: Providing state-of-the-art security solutions to safeguard digital assets and protect against cyber threats.",
+                "Encourage Innovation & R&D: Investing in localized research and development to tailor IT solutions to regional needs.",
+                "Support Sustainable Growth: Building scalable, future-proof digital solutions aligned with global technology trends."
+            ]
+        },
+        "VISION": {
+            "TITLE": "Vision",
+            "DESCRIPTION": "At CADSH, we envision a digitally empowered Central Asia that thrives on innovation, collaboration, and technological advancement. Our goal is to position Kazakhstan as a regional leader in IT, fostering a dynamic digital economy that integrates cutting-edge technologies and human capital to create a sustainable future. We aspire to bridge the digital divide, providing businesses and institutions with transformative solutions that drive efficiency, growth, and competitiveness on a global scale."
+        }
+    },
+    "SERVICES": {
+        "TITLE": "Our Services",
+        "DESCRIPTION": "At CADSH, we differentiate ourselves through our deep understanding of the regional digital landscape and our commitment to local talent development. Our strengths include:",
+        "SHOW_BUTTON": "Show",
+        "DETAILS_TITLE": "Service Details",
+        "ITEM_1": {
+            "TITLE": "Harnessing Local Expertise",
+            "TEXT": "We capitalize on Kazakhstan’s highly skilled IT professionals, creating innovative and scalable solutions tailored to local and regional needs."
+        },
+        "ITEM_2": {
+            "TITLE": "Localized R&D",
+            "TEXT": "Our in-house research drives cutting-edge digital solutions adapted to the unique business and regulatory environments of Central Asia."
+        },
+        "ITEM_3": {
+            "TITLE": "Industry-Specific Focus",
+            "TEXT": "We specialize in fintech, edtech, SaaS, and cybersecurity to deliver industry-leading expertise in digital transformation."
+        },
+        "ITEM_4": {
+            "TITLE": "Security-First Approach",
+            "TEXT": "Our cybersecurity experts ensure that all digital solutions meet the highest international security standards."
+        },
+        "ITEM_5": {
+            "TITLE": "Future-Proof Strategies",
+            "TEXT": "We align businesses with global tech trends, ensuring long-term sustainability and competitive advantage."
+        }
+    },
+    "CONTACT": {
+        "TITLE": "Contact",
+        "EMAIL": "info@cadsh.kz",
+        "PHONE": "+77 01 514-14-59",
+        "FORM": {
+            "TITLE": "Contact Us",
+            "NAME": "Name",
+            "EMAIL": "Email",
+            "MESSAGE": "Message",
+            "SEND_BUTTON": "Send"
+        },
+        "FOOTER": "© 2025 Copyright: Central Asian Digital Solution Hub",
+        "PRIVACY_POLICY": {
+            "TITLE": "Privacy Policy",
+            "CONTENT": "This Visitor Agreement is a binding legal agreement between you and CADSH. Please read it carefully. By accessing this website (including by automated means), you accept its terms. The web is an evolving medium. If we need to change the terms of this Visitor Agreement in the future, we will post the revised Visitor Agreement on our site and update the “Last Updated” date to reflect the date of the changes. By continuing to use this website after we post such changes, you agree to the terms of this Visitor Agreement, as modified. If you have comments or questions about our site, please send them to us at info@cadsh.kz. We reserve the right to deny access to this website, or any service provided via this website, to anyone who violates this agreement or interferes with others' ability to enjoy this website. We may change, restrict access to, suspend, or discontinue this website, or any portion of this website, at any time. The site is provided to you on an “as is” and “as available” basis. We disclaim all responsibility for the availability, timeliness, security, or reliability of the site or any feature or software included in the site."
+        },
+       "TERMS_CONDITIONS": {
+            "TITLE": "Terms and Conditions",
+            "CONTENT": "1. Introduction Welcome to Central Asian Digital Solutions Hub (CADSH). By accessing or using our website and services, you agree to comply with these Terms and Conditions. If you do not agree with any part of these terms, please refrain from using our website. 2. Definitions Company, we, our, or us refers to Central Asian Digital Solutions Hub. User, you, or your refers to any individual or entity using our website or services. Services refers to IT consulting, software development, SaaS platforms, training, and procurement solutions provided by CADSH. 3. Use of the Website You must be at least 18 years old to use our services. You agree to use the website only for lawful purposes and in compliance with all applicable laws and regulations. Unauthorized access, data scraping, or attempting to disrupt our website's functionality is strictly prohibited. 4. Intellectual Property All content, including text, graphics, logos, software, and trademarks on this website, is the exclusive property of CADSH and protected under intellectual property laws. You may not copy, distribute, or modify any part of our content without prior written consent. 5. Services and Payment We offer IT solutions, consulting, SaaS platforms, and other services as described on our website. Pricing, fees, and payment terms are outlined in separate agreements for specific services. CADSH reserves the right to modify service offerings and pricing at any time. 6. Limitation of Liability We strive to provide accurate and reliable information but do not guarantee that our services will be error-free or uninterrupted. CADSH is not liable for any indirect, incidental, or consequential damages arising from your use of our website or services. 7. Privacy and Data Protection Our Privacy Policy governs how we collect, use, and protect your personal data. By using our website, you consent to our data practices. 8. Third-Party Links Our website may contain links to third-party websites. CADSH is not responsible for the content, security, or privacy practices of external sites. 9. Termination We reserve the right to suspend or terminate access to our website or services if a user violates these Terms and Conditions. 10. Changes to Terms and Conditions We may update these terms from time to time. Any changes will be posted on this page. 11. Governing Law These Terms and Conditions are governed by the laws of Kazakhstan. 12. Contact Us For any questions, please contact us at: info@cadsh.kz, Address: Astana."
+
+        }
+    }
+}
