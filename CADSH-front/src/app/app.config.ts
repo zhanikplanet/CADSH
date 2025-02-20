@@ -8,6 +8,7 @@ import Aura from '@primeng/themes/aura';
 import { EmailService } from './email.service';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,10 +21,11 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: false || 'none',
+          // darkModeSelector: false || 'none',
         },
       },
     }),
-    EmailService, // Просто добавляем сервис в providers
+    EmailService,
+    MessageService
   ],
 };
