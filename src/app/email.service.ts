@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'http://localhost:5000/send-email';
+  private apiUrl = 'https://cadsh-backend.onrender.com/send-email';
 
   constructor(private http: HttpClient) {}
 
