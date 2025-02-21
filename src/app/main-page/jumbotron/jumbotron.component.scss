@@ -1,0 +1,6 @@
+:host ::ng-deep .mobile-contents {
+    @media (max-width: 767px) {
+      display: contents;
+    }
+  }
+  

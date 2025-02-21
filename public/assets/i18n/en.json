@@ -1,9 +1,12 @@
 {
     "HERO": {
-        "TITLE": "Central Asian Digital Solution Hub",
+        "TITLE": "Central Asian Digital Solutions Hub",
         "SUBTITLE": "Digital Excellence, Local Expertise, Global Vision",
         "DESCRIPTION": "Empowering Businesses Through Digital Innovation in Central Asia",
-        "CONTACT_BUTTON": "Contact us"
+        "CONTACT_BUTTON": "Contact us",
+        "ABOUT_US_BUTTON": "About us",
+        "SERVICES_BUTTON": "Our Services",
+        "PROJECTS_BUTTON": "Our Projects"
     },
     "ABOUT_US": {
         "TITLE": "About us",
@@ -26,9 +29,35 @@
     },
     "SERVICES": {
         "TITLE": "Our Services",
+        "DESCRIPTION": "We provide cutting-edge IT solutions tailored for businesses in Central Asia. Explore our services below.",
+        "SHOW_BUTTON": "Show More",
+        "DETAILS_TITLE": "Service Details",
+        "ITEM_1": {
+            "TITLE": "Software Development",
+            "TEXT": "Our software development services focus on building customized, high-quality applications that address specific business challenges. We specialize in developing scalable web and mobile applications, enterprise software, and cloud-based platforms optimized for the Central Asian market."
+        },
+        "ITEM_2": {
+            "TITLE": "SaaS Platforms",
+            "TEXT": "We provide businesses with cost-effective, cloud-based solutions that enhance efficiency and automation. Our SaaS products are designed for seamless integration, user-friendly interfaces, and robust security, ensuring long-term scalability and performance."
+        },
+        "ITEM_3": {
+            "TITLE": "Consulting Services",
+            "TEXT": "Our consulting services help businesses navigate the complexities of digital transformation by providing strategic IT guidance, business process optimization, and tailored technology roadmaps. We assist clients in adopting innovative digital solutions that enhance operational efficiency and competitiveness. Additionally, we offer language translation and interpretation services to support businesses in overcoming language barriers, ensuring seamless communication and localization of IT solutions across different markets. Our team of linguistic and technical experts delivers high-quality translations for software, technical documentation, and digital content, enabling businesses to expand their reach and improve user experience."
+        },
+        "ITEM_4": {
+            "TITLE": "Training Programs",
+            "TEXT": "We equip teams with the necessary digital skills and expertise to stay ahead in a rapidly evolving technological landscape. Our specialized IT training, cybersecurity awareness programs, and hands-on workshops ensure businesses can fully leverage modern technologies."
+        },
+        "ITEM_5": {
+            "TITLE": "Procurement and Logistics Services",
+            "TEXT": "Our procurement and logistics solutions streamline the acquisition and deployment of IT infrastructure, ensuring businesses receive high-quality technology solutions at competitive prices. We manage the end-to-end process, from sourcing and procurement to logistics and implementation, enabling companies to focus on their core operations."
+        }
+    },
+    "Projects": {
+        "TITLE": "Our Projects",
         "DESCRIPTION": "At CADSH, we differentiate ourselves through our deep understanding of the regional digital landscape and our commitment to local talent development. Our strengths include:",
         "SHOW_BUTTON": "Show",
-        "DETAILS_TITLE": "Service Details",
+        "DETAILS_TITLE": "Project Details",
         "ITEM_1": {
             "TITLE": "Harnessing Local Expertise",
             "TEXT": "We capitalize on Kazakhstan’s highly skilled IT professionals, creating innovative and scalable solutions tailored to local and regional needs."
@@ -61,15 +90,14 @@
             "MESSAGE": "Message",
             "SEND_BUTTON": "Send"
         },
-        "FOOTER": "© 2025 Copyright: Central Asian Digital Solution Hub",
+        "FOOTER": "© 2025 Copyright: Central Asian Digital Solutions Hub",
         "PRIVACY_POLICY": {
             "TITLE": "Privacy Policy",
             "CONTENT": "This Visitor Agreement is a binding legal agreement between you and CADSH. Please read it carefully. By accessing this website (including by automated means), you accept its terms. The web is an evolving medium. If we need to change the terms of this Visitor Agreement in the future, we will post the revised Visitor Agreement on our site and update the “Last Updated” date to reflect the date of the changes. By continuing to use this website after we post such changes, you agree to the terms of this Visitor Agreement, as modified. If you have comments or questions about our site, please send them to us at info@cadsh.kz. We reserve the right to deny access to this website, or any service provided via this website, to anyone who violates this agreement or interferes with others' ability to enjoy this website. We may change, restrict access to, suspend, or discontinue this website, or any portion of this website, at any time. The site is provided to you on an “as is” and “as available” basis. We disclaim all responsibility for the availability, timeliness, security, or reliability of the site or any feature or software included in the site."
         },
-       "TERMS_CONDITIONS": {
+        "TERMS_CONDITIONS": {
             "TITLE": "Terms and Conditions",
             "CONTENT": "1. Introduction Welcome to Central Asian Digital Solutions Hub (CADSH). By accessing or using our website and services, you agree to comply with these Terms and Conditions. If you do not agree with any part of these terms, please refrain from using our website. 2. Definitions Company, we, our, or us refers to Central Asian Digital Solutions Hub. User, you, or your refers to any individual or entity using our website or services. Services refers to IT consulting, software development, SaaS platforms, training, and procurement solutions provided by CADSH. 3. Use of the Website You must be at least 18 years old to use our services. You agree to use the website only for lawful purposes and in compliance with all applicable laws and regulations. Unauthorized access, data scraping, or attempting to disrupt our website's functionality is strictly prohibited. 4. Intellectual Property All content, including text, graphics, logos, software, and trademarks on this website, is the exclusive property of CADSH and protected under intellectual property laws. You may not copy, distribute, or modify any part of our content without prior written consent. 5. Services and Payment We offer IT solutions, consulting, SaaS platforms, and other services as described on our website. Pricing, fees, and payment terms are outlined in separate agreements for specific services. CADSH reserves the right to modify service offerings and pricing at any time. 6. Limitation of Liability We strive to provide accurate and reliable information but do not guarantee that our services will be error-free or uninterrupted. CADSH is not liable for any indirect, incidental, or consequential damages arising from your use of our website or services. 7. Privacy and Data Protection Our Privacy Policy governs how we collect, use, and protect your personal data. By using our website, you consent to our data practices. 8. Third-Party Links Our website may contain links to third-party websites. CADSH is not responsible for the content, security, or privacy practices of external sites. 9. Termination We reserve the right to suspend or terminate access to our website or services if a user violates these Terms and Conditions. 10. Changes to Terms and Conditions We may update these terms from time to time. Any changes will be posted on this page. 11. Governing Law These Terms and Conditions are governed by the laws of Kazakhstan. 12. Contact Us For any questions, please contact us at: info@cadsh.kz, Address: Astana."
-
         }
     }
 }

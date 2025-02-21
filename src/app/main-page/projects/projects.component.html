@@ -1,14 +1,46 @@
-<!-- <div class="projects-container px-4 py-8">
-    <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
-        @for (item of items; track $index) {
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden"> 
-                <img [src]="item.imgSrc" [alt]="item.alt" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">{{ item.title }}</h3>
-                    <p class="text-gray-600">{{ item.text }}</p>
-                </div>
+<div class="accordion-container grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 px-4 md:px-10 lg:px-16" id="projects-section">
+    <h2 [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'" 
+        class="text-3xl font-bold text-center mb-8 col-span-full">
+        {{ 'Projects.TITLE' | translate }}
+    </h2>
+
+    <p [ngClass]="theme === 'dark' ? 'text-gray-300' : 'text-gray-800'" 
+       class="text-center text-2xl">
+        <strong>{{ 'Projects.DESCRIPTION' | translate }}</strong>
+    </p>
+    <br>
+    <br>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <div *ngFor="let item of items" 
+             [ngClass]="theme === 'dark' ? 'text-white border-blue-400' : 'text-black border-blue-500'"
+             class="border-4 rounded-lg overflow-hidden flex flex-col p-6 shadow-lg transition duration-300">
+             
+            <img [src]="item.imgSrc" [alt]="item.alt" class="w-full h-48 object-cover">
+            
+            <div class="p-6 flex-grow">
+                <h3 class="text-xl font-semibold mb-2">
+                    {{ item.title | translate }}
+                </h3>
+                <p class="text-xl">
+                    {{ item.text | translate }}
+                </p>
             </div>
-        }
+
+            <div class="flex justify-center p-4">
+                <button type="button"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition"
+                    (click)="showDialog(item)">
+                    {{ 'Projects.SHOW_BUTTON' | translate }}
+                </button>
+            </div>
+        </div>
     </div>
-</div> -->
+
+    <p-dialog header="{{ 'Projects.DETAILS_TITLE' | translate }}" [modal]="true" [(visible)]="visible"
+        [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="true">
+        <h3 class="text-xl font-bold">{{ selectedItem?.title | translate }}</h3>
+        <p>
+            {{ selectedItem?.text | translate }}
+        </p>
+    </p-dialog>
+</div>

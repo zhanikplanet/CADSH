@@ -16,7 +16,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-span-3 max-w-lg w-full mx-auto ml-5">
+            <div class="col-span-3 max-w-lg w-full mx-auto ">
                 <form [formGroup]="form" (ngSubmit)="send()"
                     class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-500">
                     <h1 class="text-gray-200 text-xl mb-4 font-semibold text-center">{{ 'CONTACT.FORM.TITLE' | translate
@@ -50,12 +50,12 @@
 
     <section class="p-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="text-lg text-center">&copy; 2025 {{ 'CONTACT.FOOTER' | translate }}</div>
+            <div class="text-lg text-center">{{ 'CONTACT.FOOTER' | translate }}</div>
             <div class="privacy-policy">
                 <button (click)="showPrivacyDialog()">{{ 'CONTACT.PRIVACY_POLICY.TITLE' | translate }}</button>
                 <p-dialog header="{{ 'CONTACT.PRIVACY_POLICY.TITLE' | translate }}" [modal]="true" [(visible)]="privacyVisible"
                     [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
-                    <p class="mb-8">{{ privacyPolicyContent }}</p> <!-- Dynamically loaded content -->
+                    <p class="mb-8">{{ privacyPolicyContent }}</p>
                 </p-dialog>
             </div>
             
@@ -63,7 +63,7 @@
                 <button (click)="showTermsDialog()">{{ 'CONTACT.TERMS_CONDITIONS.TITLE' | translate }}</button>
                 <p-dialog header="{{ 'CONTACT.TERMS_CONDITIONS.TITLE' | translate }}" [modal]="true" [(visible)]="termsVisible"
                     [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
-                    <p class="mb-8">{{ termsConditionsContent }}</p> <!-- Dynamically loaded content -->
+                    <p class="mb-8">{{ termsConditionsContent }}</p>
                 </p-dialog>
             </div>
         </div>

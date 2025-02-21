@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
     ToastModule,
     ButtonModule,
     CommonModule,
-    TranslateModule // ✅ Ensure TranslateModule is imported
+    TranslateModule
   ],
   providers: [MessageService, TranslateService],
   templateUrl: './footer.component.html',
