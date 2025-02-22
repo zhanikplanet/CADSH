@@ -6,7 +6,7 @@
         "CONTACT_BUTTON": "Contact us",
         "ABOUT_US_BUTTON": "About us",
         "SERVICES_BUTTON": "Our Services",
-        "PROJECTS_BUTTON": "Our Projects"
+        "PROJECTS_BUTTON": "Why choose us"
     },
     "ABOUT_US": {
         "TITLE": "About us",
@@ -54,7 +54,7 @@
         }
     },
     "Projects": {
-        "TITLE": "Our Projects",
+        "TITLE": "Why choose us",
         "DESCRIPTION": "At CADSH, we differentiate ourselves through our deep understanding of the regional digital landscape and our commitment to local talent development. Our strengths include:",
         "SHOW_BUTTON": "Show",
         "DETAILS_TITLE": "Project Details",
