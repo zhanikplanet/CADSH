@@ -10,31 +10,39 @@
   </div>
 
   <div class="hidden md:flex justify-between items-center p-4 w-full">
-    <img [src]="theme === 'dark' ? 'assets/img/logo-white.png' : 'assets/img/logo-black.png'" alt="Logo" class="h-12">
+    <p-skeleton *ngIf="isLoading" width="100%" height="300px"></p-skeleton>
+    <img *ngIf="!isLoading" [src]="theme === 'dark' ? 'assets/img/logo-white.png' : 'assets/img/logo-black.png'" alt="Logo" class="h-12">
     <div class="flex justify-center space-x-2 p-4 w-full">
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToAboutUs()">
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToSection('about-us-section')">
         {{ 'HERO.ABOUT_US_BUTTON' | translate }}
       </button>
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToServices()">
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToSection('services-section')">
         {{ 'HERO.SERVICES_BUTTON' | translate }}
       </button>
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToProjects()">
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md" (click)="scrollToSection('projects-section')">
         {{ 'HERO.PROJECTS_BUTTON' | translate }}
       </button>
-      <button type="button"
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" type="button"
         class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded shadow-md transition"
-        (click)="scrollToContact()">
+        (click)="scrollToSection('contact-section')">
         {{ 'HERO.CONTACT_BUTTON' | translate }}
       </button>
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
         (click)="changeLanguage('kz')">
         🇰🇿 KZ
       </button>
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
         (click)="changeLanguage('ru')">
         🇷🇺 RU
       </button>
-      <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
+      <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+      <button *ngIf="!isLoading" class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-1 rounded shadow-md"
         (click)="changeLanguage('en')">
         🇬🇧 EN
       </button>
@@ -44,20 +52,20 @@
   <div *ngIf="isMenuOpen" class="absolute top-14 left-0 w-full shadow-md md:hidden z-50 p-4">
     <div class="flex flex-col items-center space-y-2">
       <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md w-full"
-        (click)="scrollToAboutUs(); toggleMenu()">
+      (click)="scrollToSection('about-us-section'); toggleMenu()">
         {{ 'HERO.ABOUT_US_BUTTON' | translate }}
       </button>
       <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md w-full"
-        (click)="scrollToServices(); toggleMenu()">
+      (click)="scrollToSection('services-section'); toggleMenu()">
         {{ 'HERO.SERVICES_BUTTON' | translate }}
       </button>
       <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md w-full"
-        (click)="scrollToProjects(); toggleMenu()">
+      (click)="scrollToSection('projects-section'); toggleMenu()">
         {{ 'HERO.PROJECTS_BUTTON' | translate }}
       </button>
       <button type="button"
         class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition w-full"
-        (click)="scrollToContact(); toggleMenu()">
+        (click)="scrollToSection('contact-section'); toggleMenu()">
         {{ 'HERO.CONTACT_BUTTON' | translate }}
       </button>
       <button class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-md w-full"
@@ -80,29 +88,34 @@
 
     <div class="text-center md:text-left flex items-center h-full">
       <section class="w-full">
-        <span [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'"
+        <p-skeleton *ngIf="isLoading" width="70%" height="40px"></p-skeleton>
+        <span *ngIf="!isLoading" [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'"
           class="block text-3xl md:text-6xl font-bold mb-1">
-          {{ 'HERO.TITLE' | translate }}
+          {{ heroTitle }}
         </span>
-        <div class="text-4xl md:text-6xl text-blue-500 font-bold mb-3">
-          {{ 'HERO.SUBTITLE' | translate }}
+        <p-skeleton *ngIf="isLoading" width="90%" height="20px"></p-skeleton>
+        <div *ngIf="!isLoading" class="text-4xl md:text-6xl text-blue-500 font-bold mb-3">
+          {{ heroSubtitle }}
         </div>
-        <p [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'"
+        <p-skeleton *ngIf="isLoading" width="100%" height="120px"></p-skeleton>
+        <p *ngIf="!isLoading" [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'"
           class="mt-0 mb-4 leading-relaxed text-xl md:text-2xl">
-          {{ 'HERO.DESCRIPTION' | translate }}
+          {{ heroDescription }}
         </p>
-        <button type="button"
+        <p-skeleton *ngIf="isLoading" width="100px" height="40px"></p-skeleton>
+        <button *ngIf="!isLoading" type="button"
           class="mr-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition"
-          (click)="scrollToContact()">
-          {{ 'HERO.CONTACT_BUTTON' | translate }}
+          (click)="scrollToSection('contact-section')">
+          {{ contactButton }}
         </button>
       </section>
     </div>
 
     <div class="relative hidden md:block h-full">
       <picture>
-        <source srcset="assets/img/tablet-hero.jpg" media="(max-width: 1024px)" />
-        <img src="assets/img/hero-2.png" alt="Image"
+        <p-skeleton *ngIf="isLoading" width="700px" height="440px"></p-skeleton>
+        <source *ngIf="!isLoading" srcset="assets/img/tablet-hero.jpg" media="(max-width: 1024px)" />
+        <img *ngIf="!isLoading" src="assets/img/hero-2.png" alt="Image"
           class="md:ml-auto block md:h-full w-full object-cover clip-path-hero"
           style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%); height: 100%;" />
       </picture>

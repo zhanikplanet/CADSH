@@ -1,20 +1,34 @@
-import { Component, Inject, PLATFORM_ID, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  Inject,
+  PLATFORM_ID,
+  AfterViewInit,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { SkeletonModule } from 'primeng/skeleton';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-jumbotron',
   standalone: true,
-  imports: [ButtonModule, TranslateModule, CommonModule],
-  providers: [TranslateService],
+  imports: [ButtonModule, SkeletonModule, TranslateModule, CommonModule],
   templateUrl: './jumbotron.component.html',
   styleUrl: './jumbotron.component.scss',
 })
-export class JumbotronComponent implements AfterViewInit, OnDestroy {
+export class JumbotronComponent implements OnInit, AfterViewInit, OnDestroy {
   isMenuOpen = false;
   theme: 'light' | 'dark' = 'light';
+
+  heroTitle = '';
+  heroSubtitle = '';
+  heroDescription = '';
+  contactButton = '';
+  isLoading: boolean = true;
+
   private observer!: MutationObserver;
   private themeSubscription!: Subscription;
 
@@ -26,6 +40,10 @@ export class JumbotronComponent implements AfterViewInit, OnDestroy {
       const savedLang = localStorage.getItem('lang') || 'en';
       this.translate.use(savedLang);
     }
+  }
+
+  ngOnInit() {
+    this.loadTranslations();
   }
 
   ngAfterViewInit() {
@@ -44,6 +62,32 @@ export class JumbotronComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  loadTranslations() {
+    setTimeout(() => {
+      this.translate.get([
+        'HERO.TITLE',
+        'HERO.SUBTITLE',
+        'HERO.DESCRIPTION',
+        'HERO.CONTACT_BUTTON'
+      ]).subscribe(translations => {
+        this.heroTitle = translations['HERO.TITLE'];
+        this.heroSubtitle = translations['HERO.SUBTITLE'];
+        this.heroDescription = translations['HERO.DESCRIPTION'];
+        this.contactButton = translations['HERO.CONTACT_BUTTON'];
+        this.isLoading = false;
+      });
+    }, 1000);
+  }
+
+  changeLanguage(lang: string) {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('lang', lang);
+    }
+    this.isLoading = true;
+    this.translate.use(lang).subscribe(() => this.loadTranslations());
+    this.isMenuOpen = false;
+  }
+
   detectTheme() {
     if (typeof window !== 'undefined') {
       const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -53,11 +97,9 @@ export class JumbotronComponent implements AfterViewInit, OnDestroy {
 
   observeThemeChanges() {
     const htmlElement = document.documentElement;
-
     this.observer = new MutationObserver(() => {
       this.detectTheme();
     });
-
     this.observer.observe(htmlElement, {
       attributes: true,
       attributeFilter: ['class']
@@ -68,44 +110,15 @@ export class JumbotronComponent implements AfterViewInit, OnDestroy {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  changeLanguage(lang: string) {
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('lang', lang);
-    }
-    this.translate.use(lang);
-    this.isMenuOpen = false; 
-  }
-
   closeMenuAfterScroll() {
     setTimeout(() => {
       this.isMenuOpen = false;
     }, 300);
   }
 
-  scrollToContact() {
+  scrollToSection(id: string) {
     if (isPlatformBrowser(this.platformId)) {
-      document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
-      this.closeMenuAfterScroll();
-    }
-  }
-
-  scrollToAboutUs() {
-    if (isPlatformBrowser(this.platformId)) {
-      document.getElementById('about-us-section')?.scrollIntoView({ behavior: 'smooth' });
-      this.closeMenuAfterScroll();
-    }
-  }
-
-  scrollToServices() {
-    if (isPlatformBrowser(this.platformId)) {
-      document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
-      this.closeMenuAfterScroll();
-    }
-  }
-
-  scrollToProjects() {
-    if (isPlatformBrowser(this.platformId)) {
-      document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       this.closeMenuAfterScroll();
     }
   }
