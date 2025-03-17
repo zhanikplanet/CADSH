@@ -4,7 +4,8 @@ import {
   PLATFORM_ID,
   AfterViewInit,
   OnDestroy,
-  OnInit
+  OnInit,
+  ElementRef
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
@@ -28,13 +29,13 @@ export class JumbotronComponent implements OnInit, AfterViewInit, OnDestroy {
   heroDescription = '';
   contactButton = '';
   isLoading: boolean = true;
-
   private observer!: MutationObserver;
   private themeSubscription!: Subscription;
 
   constructor(
     private translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private elRef: ElementRef
   ) {
     if (isPlatformBrowser(this.platformId)) {
       const savedLang = localStorage.getItem('lang') || 'en';
@@ -43,13 +44,14 @@ export class JumbotronComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadTranslations();
+    this.loadTranslations(true); // First load
   }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.detectTheme();
       this.observeThemeChanges();
+      this.hideContentInitially();
     }
   }
 
@@ -62,21 +64,34 @@ export class JumbotronComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  loadTranslations() {
+  hideContentInitially() {
+    const element = this.elRef.nativeElement as HTMLElement;
+    element.style.visibility = 'hidden';
     setTimeout(() => {
-      this.translate.get([
-        'HERO.TITLE',
-        'HERO.SUBTITLE',
-        'HERO.DESCRIPTION',
-        'HERO.CONTACT_BUTTON'
-      ]).subscribe(translations => {
-        this.heroTitle = translations['HERO.TITLE'];
-        this.heroSubtitle = translations['HERO.SUBTITLE'];
-        this.heroDescription = translations['HERO.DESCRIPTION'];
-        this.contactButton = translations['HERO.CONTACT_BUTTON'];
-        this.isLoading = false;
-      });
+      element.style.visibility = 'visible';
     }, 1000);
+  }
+
+  loadTranslations(isFirstLoad: boolean) {
+    this.translate.get([
+      'HERO.TITLE',
+      'HERO.SUBTITLE',
+      'HERO.DESCRIPTION',
+      'HERO.CONTACT_BUTTON'
+    ]).subscribe(translations => {
+      this.heroTitle = translations['HERO.TITLE'];
+      this.heroSubtitle = translations['HERO.SUBTITLE'];
+      this.heroDescription = translations['HERO.DESCRIPTION'];
+      this.contactButton = translations['HERO.CONTACT_BUTTON'];
+
+      if (isFirstLoad) {
+        setTimeout(() => {
+          this.isLoading = false; // Hide skeleton after first load
+        }, 100);
+      } else {
+        this.isLoading = false; // Instant update on language change
+      }
+    });
   }
 
   changeLanguage(lang: string) {
@@ -84,7 +99,7 @@ export class JumbotronComponent implements OnInit, AfterViewInit, OnDestroy {
       localStorage.setItem('lang', lang);
     }
     this.isLoading = true;
-    this.translate.use(lang).subscribe(() => this.loadTranslations());
+    this.translate.use(lang).subscribe(() => this.loadTranslations(false));
     this.isMenuOpen = false;
   }
 

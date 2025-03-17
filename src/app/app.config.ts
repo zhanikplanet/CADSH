@@ -14,6 +14,17 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { MessageService } from 'primeng/api';
 
 
+export function loadTranslations(translate:TranslateService){
+  return () =>{
+    return new Promise<void>((resolve)=> {
+      translate.setDefaultLang('en')
+      translate.use('en').subscribe(()=>{
+        resolve()
+      })
+    })
+  }
+}
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
